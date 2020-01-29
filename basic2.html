@@ -5,8 +5,24 @@
 	<title>Basic2</title>
 </head>
 <body>
+	<input type="text" name="string" id="ourString">
+	<input type="number" name="number" id="ourNumber">
+	<button id="knowRes">Submit</button>
 	<script>
+
 		
+
+		 function truncate () {
+		 	var str = document.getElementById("ourString").value;
+			var num = document.getElementById("ourNumber").value;
+			
+		 	
+		 	var result = str.substring(0,num);
+		 	document.write(result);
+		 }
+
+		 document.getElementById("knowRes").addEventListener('click', truncate, false);
+
 	</script>
 </body>
 </html>
