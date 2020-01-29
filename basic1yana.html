@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input id="userInput" type="text" name="birthday">
+	<button id="birthday" type="submit">Submit</button>
+
+	<script>
+
+	var currentYear = 0;	
+
+function calculatebday() {
+	var birthYear = document.getElementById("userInput").value;
+	var yearInt = parseInt(birthYear);
+
+		var date = new Date();
+		currentYear = date.getFullYear();
+
+		var ageX = currentYear - birthYear;
+		var ageY = (currentYear - birthYear) - 1;
+		console.log(ageX, ageY)
+
+		var message = "You are either " + ageY + " or " + ageX + " .";
+		document.write(message);
+}
+
+document.getElementById("birthday").addEventListener('click', calculatebday, false);
+
+		
+
+
+	</script>
+</body>
+</html>
