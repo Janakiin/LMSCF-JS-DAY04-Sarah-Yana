@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Calculator</title>
+</head>
+<body>
+
+	<input id="input" type="number" name="userInput">
+	<input id="output" type="number" name="output">
+	
+	<div><button id="delete">Del</button></div>
+	<div><button id="clear">C</button></div>
+	<div><button id="multiply">*</button></div>
+	<div><button id="divide">/</button></div>
+	<div><button id="subtract">-</button></div>
+	<div><button id="add">+</button></div>
+	<div><button id="equals">=</button></div>
+	
+	<div><button onclick="isNine()" id="nine" value="9">9</button></div>
+	<div><button onclick="isEight()" id="eight" value="8">8</button></div>
+	<div><button onclick="isSeven()" id="seven" value="7">7</button></div>
+	<div><button onclick="isSix()" id="six" value="6">6</button></div>
+	<div><button onclick="isFive()" id="five" value="5">5</button></div>
+	<div><button onclick="isFour()" id="four" value="4">4</button></div>
+	<div><button onclick="isThree()" id="three" value="3">3</button></div>
+	<div><button onclick="isTwo()" id="two" value="2">2</button></div>
+	<div><button onclick="isOne()" id="one" value="1">1</button></div>
+	<div><button onclick="isZero()" id="zero" value="0">0</button></div>
+	<div><button onclick="isDot()" id="dot" value=".">.</button></div>
+	<script>
+		var a = 0;
+		var arr = [];
+		console.log(a,arr)
+
+		function isNine(){
+			arr.push(9);
+		}
+
+		function isEight(){
+			arr.push(8);
+		}
+
+		function isSeven(){
+			arr.push(7);
+		}
+
+		function isSix(){
+			arr.push(6);
+		}
+
+		function isFive(){
+			arr.push(5);
+		}
+
+		function isFour(){
+			arr.push(4);
+		}
+
+		function isThree(){
+			arr.push(3);
+		}
+
+		function isTwo(){
+			arr.push(2);
+		}
+
+		function isOne(){
+			arr.push(1);
+		}
+
+		function isZero(){
+			arr.push(0);
+		}
+
+		function isDot(){
+			arr.push(".");
+		}
+		console.log(arr)
+
+		var x = arr.join("");
+	 	a = parseInt(x);
+
+		console.log(a);
+
+
+
+		var Calculator = new Object();
+			Calculator.firstN = a;
+			Calculator.secondN = b;
+
+			Calculator.add = function(a,b) {
+				result = a + b;
+				document.getElementById("output") = result;
+				}
+
+			Calculator.subtract = function(a,b) {
+				result = a - b;
+				document.getElementById("output") = result;
+				}
+
+			Calculator.multiply = function(a,b) {
+				result = a * b;
+				document.getElementById("output") = result;
+				}
+
+			Calculator.divide = function(a,b) {
+				result = a / b;
+				document.getElementById("output") = result;
+				}/*
+
+	</script>
+</body>
+</html>
