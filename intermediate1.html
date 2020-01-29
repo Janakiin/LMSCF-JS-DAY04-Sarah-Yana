@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Intermediate 1</title>
+</head>
+<body>
+
+	<span>Hotel:
+		<select name="hotels">
+			<option id="hiltonHotel" value="hiltonHotel">Hilton</option>
+			<option id="mariottHotel" value="mariottHotel">Mariott</option>
+			<option id="astoriaHotel" value="astoriaHotel">Astoria</option>
+			
+		</select>
+	</span>
+	<br>
+	<span>Nights: <input id="neededNights" type="number" name="neededNights"></span>
+	<button id="search">Search</button>
+
+	<script>
+
+		//creating the hotels
+		var availableNights = 0;
+		
+		function HotelConstuctor(name, rooms, availableNights)
+		{
+			this.name = name;
+			this.rooms = rooms;
+			this.availableNights = Math.floor(Math.random()*10)
+		}
+
+		var hiltonHotel = new HotelConstuctor("Hilton", 80, availableNights);
+		var mariottHotel = new HotelConstuctor("Mariott", 60, availableNights);
+		var astoriaHotel = new HotelConstuctor("Astoria", 40, availableNights);
+
+
+		//searching for nights
+		document.getElementById("search").addEventListener('click', nightChecker, false);
+
+		function nightChecker(){
+			var hilton = document.getElementById("hiltonHotel").value;
+			var mariott = document.getElementById("mariottHotel").value;
+			var astoria = document.getElementById("astoriaHotel").value;
+			console.log(hiltonHotel.availableNights);
+
+			var neededNight = document.getElementById("neededNights").value;
+
+
+			if (hiltonHotel.availableNights >= neededNight){
+				document.write("I'll reserve");
+			} else if (mariottHotel.availableNights >= neededNight){
+				document.write("I'll reserve");
+			}else if (astoriaHotel.availableNights >= neededNight){
+				document.write("I'll reserve");
+			} else if (hiltonHotel.availableNights < neededNight){
+				document.write("Sorry, no free room for " + neededNight + " nights");
+			} else if (mariottHotel.availableNights < neededNight){
+				document.write("Sorry, no free room for " + neededNight + " nights");
+			} else if (astoriaHotel.availableNights < neededNight){
+				document.write("Sorry, no free room for " + neededNight + " nights");
+			}	
+
+
+			
+
+		}
+
+
+	</script>
+</body>
+</html>
